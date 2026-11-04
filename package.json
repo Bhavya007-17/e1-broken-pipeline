@@ -1,0 +1,13 @@
+{
+  "name": "e1-broken-pipeline",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node test.js && node test-edge.js",
+    "start": "node pipeline.js --out output.json"
+  }
+}

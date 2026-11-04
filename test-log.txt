@@ -1,0 +1,43 @@
+$ node --version
+v22.23.4
+$ npm test
+
+> e1-broken-pipeline@1.0.0 test
+> node test.js && node test-edge.js
+
+Running E1 pipeline tests...
+
+✓ Replay deduplication test passed
+✓ Conflicting duplicate test passed
+✓ Inert note test passed
+✓ Partial execution test passed
+✓ Immature outcome test passed
+✓ Valid correction test passed
+✓ Invalid correction test passed
+✓ Same-day correction test passed
+✓ Future outcome/correction test passed
+✓ Over-target boundary test passed
+✓ Unapproved review_reason test passed
+✓ Authoritative input.json test passed
+
+All tests passed successfully!
+Running E1 edge-case tests...
+
+✓ E-P1 canonical JSON sorts nested keys, keeps array order and types
+✓ E-P1 conflicting replays never overwrite the first payload (one exception per conflicting arrival)
+✓ E-P1 uniqueness is per event: equal payloads under distinct ids both count
+✓ E-P2 note and outcome text are inert, even with injected fields
+✓ E-P4 future approve/execute/outcome are ineligible but stay in history
+✓ E-P4 boundaries: maturity_day == assessment_day is mature; events on assessment_day are eligible
+✓ E-P4 last grade follows event-day order; arrival order breaks same-day ties
+✓ E-P4 a valid correction is itself a grade event in (day, arrival) order
+✓ E-P5 correction arriving before its (earlier-day) outcome is valid: event-day order, not arrival
+✓ E-P5 every invalid target is rejected, kept in history, and leaves the grade alone
+✓ Review precedence immature > unapproved > over_target; grade still set when unapproved
+✓ Malformed and unrecognized events are logged and kept out of history; first occurrence claims the id
+✓ E-P3 money is summed exactly (0.1 + 0.2 meets a 0.3 target)
+✓ Input is never mutated and output is deterministic
+✓ CLI: `node pipeline.js` prints the result, --out writes it, committed output.json is current
+✓ Every output in this suite matches schema.json exactly (keys, types, enums)
+
+All 16 edge-case tests passed!

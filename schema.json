@@ -1,0 +1,28 @@
+{
+  "history": [
+    {
+      "event_id": "string",
+      "decision_id": "string",
+      "type": "recommend|approve|execute|outcome|correction|note",
+      "day": "number",
+      "grade": "null|win|loss",
+      "supersedes": "null|string"
+    }
+  ],
+  "queue": [
+    {
+      "decision_id": "string",
+      "approved": "boolean",
+      "execution_total_inr": "number",
+      "execution_status": "none|partial|complete|over_target",
+      "grade": "null|win|loss",
+      "review_reason": "null|immature|unapproved|over_target"
+    }
+  ],
+  "exceptions": [
+    {
+      "event_id": "string",
+      "reason": "conflicting_event_payload|invalid_correction_target|malformed_event|unrecognized_event_type"
+    }
+  ]
+}

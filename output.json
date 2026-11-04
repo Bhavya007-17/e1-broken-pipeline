@@ -1,0 +1,95 @@
+{
+  "history": [
+    {
+      "event_id": "e1",
+      "decision_id": "A",
+      "type": "recommend",
+      "day": 1,
+      "grade": null,
+      "supersedes": null
+    },
+    {
+      "event_id": "e2",
+      "decision_id": "A",
+      "type": "approve",
+      "day": 2,
+      "grade": null,
+      "supersedes": null
+    },
+    {
+      "event_id": "e3",
+      "decision_id": "A",
+      "type": "execute",
+      "day": 3,
+      "grade": null,
+      "supersedes": null
+    },
+    {
+      "event_id": "e4",
+      "decision_id": "A",
+      "type": "outcome",
+      "day": 5,
+      "grade": "win",
+      "supersedes": null
+    },
+    {
+      "event_id": "e5",
+      "decision_id": "B",
+      "type": "approve",
+      "day": 2,
+      "grade": null,
+      "supersedes": null
+    },
+    {
+      "event_id": "e6",
+      "decision_id": "B",
+      "type": "execute",
+      "day": 3,
+      "grade": null,
+      "supersedes": null
+    },
+    {
+      "event_id": "e7",
+      "decision_id": "B",
+      "type": "outcome",
+      "day": 8,
+      "grade": "win",
+      "supersedes": null
+    },
+    {
+      "event_id": "e8",
+      "decision_id": "B",
+      "type": "correction",
+      "day": 9,
+      "grade": "loss",
+      "supersedes": "e7"
+    },
+    {
+      "event_id": "e9",
+      "decision_id": "A",
+      "type": "note",
+      "day": 6,
+      "grade": null,
+      "supersedes": null
+    }
+  ],
+  "queue": [
+    {
+      "decision_id": "A",
+      "approved": true,
+      "execution_total_inr": 400,
+      "execution_status": "partial",
+      "grade": null,
+      "review_reason": "immature"
+    },
+    {
+      "decision_id": "B",
+      "approved": true,
+      "execution_total_inr": 500,
+      "execution_status": "complete",
+      "grade": "loss",
+      "review_reason": null
+    }
+  ],
+  "exceptions": []
+}
